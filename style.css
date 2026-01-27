@@ -1,9 +1,9 @@
 /* --- IMPORTANDO FONTES MODERNAS --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@700;800&display=swap');
 
-/* --- PALETA "IRON TECH" + ROYAL (ATUALIZADA) --- */
+/* --- VARIÁVEIS GERAIS (PALETA IRON TECH + ROYAL) --- */
 :root {
-    /* Cores Base (Mantidas) */
+    /* Cores Base */
     --iron-red-dark: #500000;
     --iron-red-bright: #ff3333;
     --iron-gold: #ffd700;
@@ -11,21 +11,16 @@
     --bg-dark: #030305;
     --neon-glow: 0 0 10px rgba(255, 51, 51, 0.5), 0 0 25px rgba(255, 51, 51, 0.3);
 
-    /* Novas Cores Royal / Profissional */
+    /* Cores Royal / Profissional */
     --royal-gold: #D4AF37;
-    /* Dourado Clássico (Mais sério) */
     --royal-red: #800000;
-    /* Vermelho Vinho */
-    --obsidian: #0a0a0a;
-    /* Preto Profundo para cards antigos */
-    --glass-border: rgba(255, 255, 255, 0.08);
 
     /* Fontes */
     --tech-font: 'JetBrains Mono', monospace;
     --body-font: 'Inter', sans-serif;
 }
 
-/* Reset Básico */
+/* --- RESET & BODY --- */
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +40,7 @@ body {
     position: relative;
 }
 
-/* TEXTURA DE SCANLINES */
+/* Textura Scanlines */
 body::after {
     content: "";
     position: fixed;
@@ -69,7 +64,7 @@ body::after {
     filter: contrast(1.3) brightness(1.1);
 }
 
-/* --- TÍTULOS E TEXTOS GERAIS (MANTIDOS) --- */
+/* --- TIPOGRAFIA DA HOME --- */
 h1.glitch {
     font-family: var(--tech-font);
     font-size: 6.5rem;
@@ -94,37 +89,13 @@ h1.glitch {
     text-shadow: 0 0 8px rgba(255, 107, 0, 0.5);
 }
 
-.section-header {
+.intro-container {
     text-align: center;
-    margin-bottom: 60px;
     position: relative;
-    z-index: 2;
-}
-
-.glitch-title {
-    font-family: var(--tech-font);
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    color: #fff;
-    letter-spacing: 1.5px;
-    text-shadow: 0 0 15px rgba(255, 51, 51, 0.6);
-    margin-bottom: 10px;
-}
-
-.section-desc {
-    font-family: var(--body-font);
-    font-weight: 300;
-    color: #aaa;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-.highlight {
-    color: var(--iron-red-bright);
-    font-weight: 600;
-    text-shadow: 0 0 10px var(--iron-red-bright);
+    z-index: 10;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
 }
 
 /* Tech Stack Bar (Home) */
@@ -150,16 +121,7 @@ h1.glitch {
     font-weight: 700;
 }
 
-.intro-container {
-    text-align: center;
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-}
-
-/* --- MENU PRINCIPAL (Cards) --- */
+/* --- MENU PRINCIPAL (CARDS 3D) --- */
 .menu-grid {
     display: flex;
     justify-content: center;
@@ -192,20 +154,6 @@ h1.glitch {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-.card-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, var(--iron-red-bright), transparent 50%);
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.3);
-    transition: all 0.6s ease;
-    pointer-events: none;
-    mix-blend-mode: hard-light;
-}
-
 .menu-card h3 {
     font-family: var(--tech-font);
     color: #fff;
@@ -218,6 +166,21 @@ h1.glitch {
     font-family: var(--body-font);
     color: #999;
     font-size: 0.9rem;
+}
+
+/* Hover Effects Menu */
+.card-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--iron-red-bright), transparent 50%);
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3);
+    transition: all 0.6s ease;
+    pointer-events: none;
+    mix-blend-mode: hard-light;
 }
 
 .menu-card:hover {
@@ -259,7 +222,7 @@ h1.glitch {
     }
 }
 
-/* --- PAINEL DE CONTEÚDO (HUD) --- */
+/* --- CAMADA DE CONTEÚDO (HUD) --- */
 #content-layer {
     position: fixed;
     top: 0;
@@ -303,6 +266,40 @@ h1.glitch {
     }
 }
 
+/* Header de Seção Interna */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.glitch-title {
+    font-family: var(--tech-font);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 15px rgba(255, 51, 51, 0.6);
+    margin-bottom: 10px;
+}
+
+.section-desc {
+    font-family: var(--body-font);
+    font-weight: 300;
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.highlight {
+    color: var(--iron-red-bright);
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--iron-red-bright);
+}
+
 /* Botão Voltar */
 #back-btn {
     display: flex;
@@ -327,371 +324,473 @@ h1.glitch {
     box-shadow: 0 0 30px var(--iron-red-bright);
 }
 
-/* --- TÍTULOS DE BLOCO (NOVO) --- */
-.block-title {
-    text-align: center;
-    font-family: var(--tech-font);
-    font-size: 1.4rem;
-    margin-bottom: 50px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-}
-
-.block-title.royal-gold {
-    color: var(--royal-gold);
-    text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-}
-
-.block-title.royal-silver {
-    color: #ccc;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-
-/* --- TIMELINE ZIG-ZAG (WORK) --- */
-.timeline-journey {
-    position: relative;
-    margin: 60px 0;
-    padding: 20px 0;
-    max-width: 1000px;
+/* --- SEÇÃO 1: DASHBOARD (IDENTIDADE) --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 25px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.central-line {
+.dash-card {
+    background: linear-gradient(145deg, rgba(20, 10, 10, 0.9), rgba(5, 5, 5, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.dash-card:hover {
+    border-color: var(--iron-red-bright);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 50, 50, 0.1);
+}
+
+/* Card Identidade */
+.identity-card {
+    grid-column: span 1;
+    border-top: 3px solid var(--royal-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.avatar-frame {
+    width: 80px;
+    height: 80px;
+    background: #222;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid var(--royal-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.avatar-initials {
+    font-family: var(--tech-font);
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 800;
+}
+
+.id-info h3 {
+    font-family: var(--tech-font);
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.id-role {
+    display: block;
+    color: var(--iron-orange);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.id-tagline {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.id-hidden-data {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    opacity: 0.4;
+    transition: 0.4s;
+    transform: translateY(10px);
+}
+
+.identity-card:hover .id-hidden-data {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+    font-family: var(--tech-font);
+}
+
+.data-row .label {
+    color: #555;
+}
+
+.data-row .value {
+    color: #ccc;
+}
+
+/* Card Resumo (3 Blocos) */
+.summary-card {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    align-items: start;
+    border-top: 3px solid var(--iron-red-dark);
+}
+
+.summary-block {
+    padding: 10px;
+}
+
+.summary-block.highlight-block {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.block-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.summary-block h4 {
+    color: #fff;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.summary-block p {
+    color: #888;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* Card Stack */
+.stack-card {
+    grid-column: span 2;
+    border-top: 3px solid #00aaff;
+}
+
+.stack-card h3 {
+    color: #fff;
+    font-family: var(--tech-font);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.stack-category {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+}
+
+.cat-name {
+    width: 80px;
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #aaa;
+    font-family: var(--tech-font);
+    transition: 0.2s;
+}
+
+.stack-card:hover .chip {
+    border-color: #555;
+    color: #fff;
+}
+
+/* Card Edu (Resumo) */
+.edu-card {
+    grid-column: span 1;
+    border-top: 3px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edu-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.edu-item .year {
+    font-family: var(--tech-font);
+    font-size: 0.8rem;
+    color: var(--iron-orange);
+    padding-top: 3px;
+}
+
+.edu-details h4 {
+    font-size: 0.9rem;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.edu-details .place {
+    display: block;
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.edu-badge {
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    color: #ccc;
+}
+
+.cert-mini {
+    margin-top: auto;
+    font-size: 0.75rem;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* --- SEÇÃO 2: MISSION LOGS (CARREIRA) --- */
+.mission-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.mission-line {
     position: absolute;
+    left: 50%;
     top: 0;
     bottom: 0;
-    left: 50%;
-    width: 4px;
-    background: linear-gradient(to bottom, transparent, var(--iron-red-dark), var(--iron-red-bright), var(--iron-red-dark), transparent);
-    transform: translateX(-50%);
-    box-shadow: 0 0 20px var(--iron-red-bright);
-    z-index: 1;
-}
-
-.central-line.gold-line {
-    background: linear-gradient(to bottom, transparent, var(--royal-red), var(--royal-gold), var(--royal-red), transparent);
-    box-shadow: 0 0 10px var(--royal-red);
     width: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-50%);
 }
 
-.journey-item {
+.mission-entry {
     position: relative;
     width: 50%;
-    padding: 0 60px;
+    padding: 0 40px;
+    margin-bottom: 50px;
     box-sizing: border-box;
-    z-index: 2;
-    opacity: 0;
-    transition: all 0.6s ease-out;
-    margin-bottom: 60px;
 }
 
-.journey-item.left {
-    left: 0;
-    text-align: right;
-}
-
-.journey-item.right {
+.mission-entry.right {
     margin-left: 50%;
     text-align: left;
 }
 
-.journey-content {
-    background: rgba(15, 5, 5, 0.9);
-    border: 1px solid #333;
-    padding: 30px;
-    border-radius: 12px;
-    position: relative;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6);
-    border-left: 4px solid var(--iron-red-dark);
+.mission-entry.left {
+    left: 0;
+    text-align: right;
 }
 
-.journey-content::before {
+.center-entry {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 60px;
+    z-index: 5;
+}
+
+.mission-marker {
+    position: absolute;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    background: #000;
+    border: 2px solid #444;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.mission-entry.right .mission-marker {
+    left: -7px;
+}
+
+.mission-entry.left .mission-marker {
+    right: -7px;
+}
+
+.mission-marker.active {
+    background: var(--royal-gold);
+    border-color: #fff;
+    box-shadow: 0 0 15px var(--royal-gold);
+}
+
+.mission-marker.security {
+    border-color: var(--iron-red-bright);
+}
+
+/* Estilos do Card de Missão */
+.mission-card {
+    background: linear-gradient(135deg, #0e0e0e, #050505);
+    border: 1px solid #222;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: left;
+    position: relative;
+}
+
+.mission-card::before {
     content: '';
     position: absolute;
-    top: 35px;
-    width: 60px;
-    height: 2px;
-    background: var(--iron-red-dark);
+    top: 25px;
+    width: 40px;
+    height: 1px;
+    background: #333;
 }
 
-.journey-item.left .journey-content::before {
-    right: -64px;
+.mission-entry.right .mission-card::before {
+    left: -40px;
 }
 
-.journey-item.right .journey-content::before {
-    left: -64px;
+.mission-entry.left .mission-card::before {
+    right: -40px;
 }
 
-.journey-marker {
-    position: absolute;
-    top: 52px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    z-index: 3;
-    background: #000;
-    border: 3px solid #444;
-    transition: 0.3s;
+/* Variações de Missão */
+.active-mission {
+    border-left: 3px solid var(--royal-gold);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.05);
 }
 
-.journey-item.left .journey-marker {
-    right: -12px;
+.security-mission {
+    border-left: 3px solid var(--iron-red-bright);
 }
 
-.journey-item.right .journey-marker {
-    left: -12px;
+.mission-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
 }
 
-/* 1. STATUS ACTIVE (Ouro e Glória) */
-.journey-item.status-active .journey-content {
-    background: linear-gradient(135deg, rgba(30, 10, 0, 0.8), rgba(10, 5, 5, 0.95));
-    border: 1px solid var(--royal-gold);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-}
-
-.journey-item.status-active h3 {
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.journey-item.status-active h4 {
-    color: var(--royal-gold);
-    font-weight: 800;
+.mission-code {
+    font-family: var(--tech-font);
+    font-size: 0.7rem;
+    color: #444;
     letter-spacing: 1px;
 }
 
-.journey-marker.gold-marker {
-    background: var(--royal-gold);
-    border-color: #fff;
-    box-shadow: 0 0 20px var(--royal-gold);
-    animation: pulseReactor 2s infinite;
-}
-
-/* 2. STATUS ARCHIVED (Obsidiana / Luz Preta) */
-.journey-item.status-archived .journey-content {
-    background: linear-gradient(145deg, #050505, #0f0f0f);
-    /* Bem escuro */
-    border: 1px solid #222;
-    /* Borda quase invisível */
-    border-left: 3px solid #333;
-    /* Detalhe cinza */
-    opacity: 0.8;
-    transition: all 0.4s ease;
-}
-
-.journey-item.status-archived h3 {
-    color: #888;
-    font-weight: 600;
-}
-
-.journey-item.status-archived h4 {
-    color: #555;
-}
-
-.journey-item.status-archived .job-details li {
-    color: #444;
-    border-color: #222;
-}
-
-.journey-item.status-archived .tech-tags span {
-    border-color: #333;
-    color: #555;
-    background: #000;
-}
-
-/* Efeito Hover na Obsidiana */
-.journey-item.status-archived:hover .journey-content {
-    opacity: 1;
-    border-color: #444;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-    transform: translateY(-2px);
-}
-
-.journey-item.status-archived:hover h3 {
-    color: #fff;
-}
-
-.journey-marker.obsidian-marker {
-    background: #000;
-    border: 2px solid #333;
-}
-
-/* --- TIPOGRAFIA INTERNA DO CARD --- */
-.journey-content h3 {
-    font-family: var(--tech-font);
-    color: #fff;
-    font-size: 1.3rem;
-    margin-bottom: 5px;
-}
-
-.journey-content h4 {
-    font-family: var(--body-font);
-    color: var(--iron-orange);
-    font-weight: 600;
-    font-size: 0.95rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.date-badge {
-    display: inline-block;
-    font-family: var(--tech-font);
-    font-size: 0.75rem;
-    margin-bottom: 15px;
+.role-badge {
+    font-size: 0.7rem;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--royal-gold);
     padding: 3px 8px;
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #888;
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
-.status-active .date-badge {
-    color: var(--royal-gold);
-    border-color: rgba(212, 175, 55, 0.3);
+.sec-badge {
+    color: var(--iron-red-bright);
+    background: rgba(255, 50, 50, 0.1);
+    border-color: rgba(255, 50, 50, 0.2);
 }
 
-.job-details {
-    list-style: none;
-    margin: 15px 0;
-}
-
-.job-details li {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-bottom: 8px;
-    line-height: 1.5;
-}
-
-.tech-tags span {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 4px 8px;
-    margin-right: 5px;
-    background: #000;
-    border: 1px solid #333;
-    color: #888;
-    font-family: var(--tech-font);
-}
-
-.status-active .tech-tags span {
-    border-color: var(--iron-orange);
-    color: var(--iron-orange);
-}
-
-@keyframes pulseReactor {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 50, 50, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 20px rgba(255, 30, 30, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-/* Efeito Tilt Base */
-.journey-content,
-.cert-card {
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-}
-
-.journey-content * {
-    transform: translateZ(10px);
-}
-
-/* --- GRID DE CERTIFICAÇÕES (NOVO) --- */
-.grid-certifications {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.cert-card {
-    background: rgba(10, 10, 10, 0.6);
-    border: 1px solid var(--glass-border);
-    padding: 25px;
-    border-radius: 12px;
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    transition: 0.3s;
-}
-
-.cert-card:hover {
-    background: rgba(20, 20, 20, 0.8);
-    border-color: #444;
-    transform: translateY(-5px);
-}
-
-.major-card {
-    grid-column: span 2;
-    border-left: 3px solid #00aaff;
-    background: linear-gradient(90deg, rgba(0, 20, 40, 0.3), transparent);
-}
-
-.tech-card {
-    border-left: 3px solid var(--royal-gold);
-}
-
-.minor-card {
-    padding: 15px;
-    align-items: center;
-    border: 1px solid #222;
-}
-
-.cert-icon {
-    font-size: 2rem;
-}
-
-.cert-info h3 {
-    font-size: 1.1rem;
+.mission-card h3 {
     color: #fff;
+    font-size: 1.2rem;
     margin-bottom: 2px;
-    text-transform: uppercase;
+}
+
+.mission-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 20px;
     font-family: var(--tech-font);
 }
 
-.cert-info h4 {
-    font-size: 0.9rem;
-    color: #888;
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.credential-code {
-    font-family: 'Courier New', monospace;
-    font-size: 0.7rem;
-    color: #555;
-    background: #000;
-    padding: 4px;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-.mini-tags {
+.mission-body {
     display: flex;
-    gap: 5px;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 15px;
+}
+
+.mission-col {
+    flex: 1;
+}
+
+.mission-col h4 {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.mission-col ul {
+    list-style: none;
+    padding-left: 10px;
+    border-left: 2px solid #222;
+}
+
+.mission-col li {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+/* Voluntariado */
+.volunt-card {
+    display: inline-block;
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px dashed #444;
+    padding: 20px 40px;
+    border-radius: 50px;
+}
+
+.volunt-card h3 {
+    font-size: 1rem;
+    color: #fff;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.volunt-card p {
+    font-size: 0.85rem;
+    color: #888;
+    max-width: 400px;
+    margin: 10px auto 0;
+    line-height: 1.4;
+}
+
+.human-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #555;
+    display: block;
     margin-top: 10px;
 }
 
-.mini-tags span {
-    font-size: 0.65rem;
-    padding: 2px 6px;
-    border: 1px solid #333;
-    border-radius: 3px;
-    color: #aaa;
-    text-transform: uppercase;
-}
-
-/* DIVISOR REAL */
+/* Separador Royal */
 .royal-divider {
     display: flex;
     align-items: center;
@@ -714,26 +813,286 @@ h1.glitch {
     transform: rotate(45deg);
 }
 
-/* VOLUNTARIADO */
-.volunteer-section {
-    text-align: center;
-    margin-top: 50px;
-    border-top: 1px solid #222;
-    padding-top: 20px;
-    color: #555;
-    font-size: 0.9rem;
+
+/* --- SEÇÃO 3: ACADÊMICO & SKILLS (HOLOGRAMAS) --- */
+.archive-section {
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
 }
 
-.volunteer-section h4 {
+.block-title {
+    text-align: center;
+    font-family: var(--tech-font);
+    font-size: 1.4rem;
+    color: var(--royal-gold);
+    margin: 60px 0 40px 0;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 10px;
-    font-size: 0.8rem;
-    color: #444;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* --- BIO & PROJETOS (Mantidos) --- */
-.bio-container,
+.block-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--royal-gold);
+    margin: 10px auto 0 auto;
+    opacity: 0.5;
+}
+
+.holo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Card Holográfico */
+.holo-card {
+    position: relative;
+    background: rgba(10, 10, 10, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--royal-gold);
+    padding: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+    cursor: default;
+}
+
+/* Variação Concluído */
+.holo-card.finished {
+    border-left-color: #444;
+}
+
+.holo-card.finished:hover {
+    border-left-color: #fff;
+}
+
+/* Hover Holográfico */
+.holo-card:hover {
+    background: rgba(20, 20, 20, 0.9);
+    transform: scale(1.02) translateX(10px);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.holo-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.holo-icon {
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.holo-title-group {
+    flex-grow: 1;
+}
+
+.holo-title-group h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.holo-title-group .institution {
+    color: #888;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-family: var(--tech-font);
+}
+
+.holo-year {
+    font-family: var(--tech-font);
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.holo-card:hover .holo-year {
+    color: var(--royal-gold);
+    text-shadow: 0 0 10px var(--royal-gold);
+}
+
+/* Progress Bar */
+.progress-container {
+    margin: 10px 0;
+}
+
+.progress-label {
+    font-size: 0.7rem;
+    color: #666;
+    margin-bottom: 5px;
+    font-family: var(--tech-font);
+}
+
+.progress-track {
+    width: 100%;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--royal-gold);
+    box-shadow: 0 0 10px var(--royal-gold);
+    position: relative;
+}
+
+.progress-fill.full {
+    background: #444;
+    box-shadow: none;
+}
+
+.holo-card:hover .progress-fill.full {
+    background: #fff;
+}
+
+/* Detalhes Expansíveis */
+.holo-details {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.holo-card:hover .holo-details {
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 15px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+.holo-details p {
+    color: #bbb;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Animação Scanline */
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transform: skewX(-20deg);
+    animation: holographScan 4s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes holographScan {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 200%;
+    }
+
+    100% {
+        left: 200%;
+    }
+}
+
+/* Chips de Skills */
+.chips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill-chip {
+    background: #080808;
+    border: 1px solid #333;
+    padding: 15px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.skill-chip.google {
+    border-color: #4285F4;
+}
+
+.skill-chip.security {
+    border-color: #00d26a;
+}
+
+.skill-chip:hover {
+    transform: translateY(-5px);
+    background: #111;
+}
+
+.skill-chip.google:hover {
+    box-shadow: 0 0 20px rgba(66, 133, 244, 0.3);
+}
+
+.skill-chip.security:hover {
+    box-shadow: 0 0 20px rgba(0, 210, 106, 0.3);
+}
+
+.chip-icon {
+    font-size: 1.5rem;
+}
+
+.chip-info h4 {
+    color: #fff;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.chip-info span {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.chip-status {
+    margin-left: auto;
+    font-family: var(--tech-font);
+    font-size: 0.6rem;
+    padding: 3px 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: #aaa;
+    letter-spacing: 1px;
+}
+
+.skill-chip:hover .chip-status {
+    background: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+
+/* --- SEÇÃO 4: PROJETOS & LABS --- */
 .projects-wrapper {
     display: flex;
     flex-direction: column;
@@ -742,44 +1101,22 @@ h1.glitch {
     margin: 0 auto;
 }
 
-.bio-card,
-.info-card,
 .project-showcase {
     background: linear-gradient(145deg, rgba(25, 10, 10, 0.95), rgba(10, 5, 5, 0.98));
     border: 1px solid #2a1a1a;
     border-left: 4px solid var(--iron-red-dark);
-    padding: 35px;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     transition: 0.3s;
+    display: flex;
+    padding: 0;
+    overflow: hidden;
 }
 
-.bio-card:hover,
-.info-card:hover,
 .project-showcase:hover {
     border-color: var(--iron-red-bright);
     box-shadow: 0 0 30px rgba(255, 30, 30, 0.2);
     transform: translateY(-7px);
-}
-
-.bio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.info-card {
-    text-align: center;
-}
-
-.icon-box {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.project-showcase {
-    padding: 0;
-    display: flex;
 }
 
 .project-preview {
@@ -789,11 +1126,38 @@ h1.glitch {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-.project-details {
-    width: 55%;
-    padding: 30px;
+.refrinova-bg {
+    background: linear-gradient(135deg, #001a33, #000);
+}
+
+.futebol-bg {
+    background: linear-gradient(135deg, #0f2e1b, #000);
+}
+
+.status-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    font-family: var(--tech-font);
+    color: #fff;
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.status-badge.production {
+    background: #00b300;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.4);
+}
+
+.status-badge.hobby {
+    background: #ffcc00;
+    color: #000;
 }
 
 .fake-browser {
@@ -816,6 +1180,64 @@ h1.glitch {
     background: #555;
 }
 
+.project-details {
+    width: 55%;
+    padding: 30px;
+}
+
+.proj-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.type-tag {
+    font-size: 0.7rem;
+    color: #555;
+    border: 1px solid #333;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.desc {
+    color: #999;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+.proj-grid {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+    padding: 15px 0;
+}
+
+.proj-grid h4 {
+    font-size: 0.8rem;
+    color: var(--iron-orange);
+    margin-bottom: 5px;
+}
+
+.proj-grid .small {
+    font-size: 0.8rem;
+    color: #888;
+    line-height: 1.4;
+}
+
+.tech-stack span {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    margin-right: 5px;
+    border-radius: 4px;
+    background: #000;
+    border: 1px solid #333;
+    color: #777;
+    font-family: var(--tech-font);
+}
+
 .btn-project {
     background: linear-gradient(135deg, var(--iron-red-dark), #300);
     color: #fff;
@@ -829,7 +1251,59 @@ h1.glitch {
     text-transform: uppercase;
 }
 
-/* Flash */
+/* Labs Section */
+.lab-section {
+    margin-top: 60px;
+    border-top: 1px solid #222;
+    padding-top: 30px;
+}
+
+.lab-title {
+    text-align: center;
+    color: #666;
+    font-family: var(--tech-font);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.lab-card {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.lab-card:hover {
+    border-color: #444;
+    transform: translateY(-3px);
+}
+
+.lab-icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.lab-card h4 {
+    font-size: 0.9rem;
+    color: #ddd;
+    margin-bottom: 5px;
+}
+
+.lab-card p {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+/* --- EFEITOS GERAIS --- */
 #lightning-flash {
     position: fixed;
     top: 0;
@@ -862,441 +1336,224 @@ h1.glitch {
     }
 }
 
-/* Responsividade */
+/* --- RESPONSIVIDADE (MOBILE & TABLET) --- */
 @media (max-width: 900px) {
-    h1.glitch {
-        font-size: 3.5rem;
+
+    /* 1. Tipografia e Layout Geral */
+    body {
+        overflow-y: auto;
+        /* Permite scroll nativo no mobile se necessário */
+        height: auto;
+        min-height: 100vh;
+        align-items: flex-start;
+        /* Alinha topo ao invés de centro */
+        padding-top: 20px;
     }
 
+    .intro-container {
+        padding-top: 60px;
+        /* Espaço para não colar no topo */
+    }
+
+    h1.glitch {
+        font-size: 3rem;
+        /* Menor para não quebrar linha */
+        letter-spacing: -1px;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+
+    .tech-stack-bar {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .tech-stack-bar span {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+    }
+
+    /* 2. Menu Principal */
     .menu-grid {
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        perspective: none;
+        /* Remove 3D excessivo no mobile */
     }
 
-    .bio-grid,
-    .grid-certifications {
+    .menu-card {
+        width: 100%;
+        max-width: 340px;
+        /* Largura segura */
+        padding: 25px;
+        transform: none !important;
+        /* Reseta transformações 3D */
+    }
+
+    .menu-card:hover {
+        transform: translateY(-5px) !important;
+        /* Apenas sobe um pouco */
+    }
+
+    /* 3. Camada de Conteúdo */
+    #content-layer {
+        padding: 20px 15px;
+        /* Menos padding lateral */
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .glitch-title {
+        font-size: 2.2rem;
+        /* Título da seção menor */
+    }
+
+    /* 4. Dashboard (Identidade & Skills) */
+    .dashboard-grid {
         grid-template-columns: 1fr;
+        /* Coluna única */
+        gap: 20px;
     }
 
-    .major-card {
+    .identity-card,
+    .summary-card,
+    .stack-card,
+    .edu-card {
         grid-column: span 1;
     }
 
+    .summary-card {
+        grid-template-columns: 1fr;
+        /* Blocos um embaixo do outro */
+    }
+
+    .stack-category {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .cat-name {
+        width: 100%;
+        border-bottom: 1px dashed #333;
+        padding-bottom: 4px;
+        margin-bottom: 4px;
+    }
+
+    /* 5. Timeline (Mission Logs) - AJUSTE CRÍTICO */
+    .mission-timeline {
+        padding-left: 0;
+    }
+
+    .mission-line {
+        left: 20px;
+        /* Linha fixa na esquerda */
+        transform: none;
+    }
+
+    /* Força todos os cards para a direita da linha */
+    .mission-entry,
+    .mission-entry.left,
+    .mission-entry.right {
+        width: 100%;
+        margin: 0 0 40px 0;
+        padding: 0 0 0 50px;
+        /* Espaço para a linha */
+        text-align: left;
+        left: auto;
+        right: auto;
+    }
+
+    /* Ajusta as bolinhas (Markers) */
+    .mission-marker,
+    .mission-entry.right .mission-marker,
+    .mission-entry.left .mission-marker {
+        left: 14px;
+        /* Centralizado na linha (20px) */
+        right: auto;
+    }
+
+    /* Ajusta os conectores (Linhas horizontais) */
+    .mission-card::before,
+    .mission-entry.right .mission-card::before,
+    .mission-entry.left .mission-card::before {
+        left: -30px;
+        /* Conecta na bolinha */
+        right: auto;
+        width: 30px;
+    }
+
+    .mission-body {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .mission-col ul {
+        padding-left: 5px;
+    }
+
+    /* Voluntariado */
+    .center-entry {
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .volunt-card {
+        padding: 20px;
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    /* 6. Holo Cards & Chips */
+    .holo-grid {
+        margin-top: 15px;
+    }
+
+    /* No mobile, removemos o hover complexo e deixamos "Toque para abrir" ou sempre aberto */
+    .holo-card:hover {
+        transform: none;
+        /* Remove scale */
+    }
+
+    .holo-details {
+        /* Opcional: Deixar detalhes visíveis sempre no mobile ou usar JS para toggle */
+        /* max-height: 500px; opacity: 1; margin-top: 15px; border-top: 1px solid #333; padding-top: 10px; */
+    }
+
+    .chips-grid,
+    .lab-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 7. Projetos */
     .project-showcase {
         flex-direction: column;
     }
 
     .project-preview {
         width: 100%;
-        min-height: 200px;
+        min-height: 220px;
         border-right: none;
+        border-bottom: 1px solid #333;
     }
 
     .project-details {
         width: 100%;
+        padding: 20px;
     }
 
-    /* Timeline Mobile */
-    .central-line {
-        left: 20px;
+    .proj-grid {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .journey-item {
-        width: 100%;
-        padding-left: 60px;
-        padding-right: 10px;
-        margin-bottom: 40px;
-    }
-
-    .journey-item.left,
-    .journey-item.right {
-        left: 0;
-        text-align: left;
-        margin-left: 0;
-    }
-
-    .journey-item.left .journey-marker,
-    .journey-item.right .journey-marker {
-        left: 8px;
-        right: auto;
-    }
-
-    .journey-item.left .journey-content::before,
-    .journey-item.right .journey-content::before {
-        left: -40px;
-        width: 40px;
-        right: auto;
-    }
-}
-
-/* --- TÍTULOS DE SEÇÃO --- */
-.block-title {
-    text-align: center;
-    font-family: var(--tech-font);
-    font-size: 1.4rem;
-    color: var(--royal-gold);
-    margin: 60px 0 40px 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-/* Linha decorativa embaixo do título */
-.block-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: var(--royal-gold);
-    margin: 10px auto 0 auto;
-    opacity: 0.5;
-}
-
-/* --- 1. TIMELINE DE TRABALHO (ZIG-ZAG) --- */
-.timeline-journey {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-bottom: 40px;
-}
-
-.central-line {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.1);
-    /* Linha discreta */
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-.journey-item {
-    position: relative;
-    width: 50%;
-    padding: 0 50px;
-    box-sizing: border-box;
-    z-index: 2;
-    margin-bottom: 50px;
-    opacity: 0;
-    transition: 0.6s ease;
-}
-
-.journey-item.left {
-    left: 0;
-    text-align: right;
-}
-
-.journey-item.right {
-    margin-left: 50%;
-    text-align: left;
-}
-
-/* O CARD (ESTILO ÚNICO E LIMPO PARA TODOS) */
-.journey-content {
-    background: linear-gradient(145deg, #111, #080808);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-left: 3px solid var(--royal-gold);
-    /* Detalhe dourado sutil em todos */
-    padding: 25px;
-    border-radius: 12px;
-    position: relative;
-    transition: 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Hover Interativo */
-.journey-content:hover {
-    transform: translateY(-5px);
-    border-color: var(--royal-gold);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-}
-
-/* Conectores */
-.journey-content::before {
-    content: '';
-    position: absolute;
-    top: 30px;
-    width: 50px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.journey-item.left .journey-content::before {
-    right: -50px;
-}
-
-.journey-item.right .journey-content::before {
-    left: -50px;
-}
-
-/* --- MARCADORES (LIGADO / DESLIGADO) --- */
-.journey-marker {
-    position: absolute;
-    top: 25px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    z-index: 3;
-    transition: 0.3s;
-}
-
-.journey-item.left .journey-marker {
-    right: -6px;
-}
-
-.journey-item.right .journey-marker {
-    left: -6px;
-}
-
-/* Estado: ACESO (Pulsando) */
-.journey-marker.pulse {
-    background: var(--royal-gold);
-    border: 2px solid #fff;
-    box-shadow: 0 0 15px var(--royal-gold);
-    animation: pulse 2s infinite;
-}
-
-/* Estado: DESLIGADO (Discreto) */
-.journey-marker.off {
-    background: #000;
-    border: 2px solid #444;
-    /* Cinza escuro */
-    box-shadow: none;
-}
-
-/* Tipografia Interna */
-.journey-content h3 {
-    font-family: var(--tech-font);
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.journey-content h4 {
-    font-family: var(--body-font);
-    color: var(--royal-gold);
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.date-badge {
-    display: inline-block;
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    margin-bottom: 10px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    color: #888;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.job-details {
-    list-style: none;
-    margin-bottom: 15px;
-}
-
-.job-details li {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-bottom: 6px;
-    line-height: 1.5;
-}
-
-.tech-tags span {
-    font-size: 0.7rem;
-    padding: 3px 8px;
-    margin-right: 5px;
-    border-radius: 4px;
-    background: #000;
-    border: 1px solid #333;
-    color: #777;
-    font-family: var(--tech-font);
-}
-
-
-/* --- 2. GRID BENTO (ESTUDOS & CURSOS) - O NOVO VISUAL --- */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* 4 colunas */
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto 50px auto;
-}
-
-/* Estilo Base do Card Bento */
-.bento-card {
-    background: linear-gradient(145deg, #111, #0a0a0a);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: 0.3s;
-}
-
-.bento-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-/* Tamanhos dos Cards */
-.bento-card.large {
-    grid-column: span 4;
-    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-    border-left: 4px solid var(--royal-gold);
-}
-
-/* Ocupa tudo */
-.bento-card.medium {
-    grid-column: span 2;
-}
-
-/* Metade */
-.bento-card.small {
-    grid-column: span 1;
-    text-align: center;
-    justify-content: center;
-}
-
-/* Um quarto */
-
-/* Conteúdo Bento */
-.bento-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    margin-bottom: 15px;
-}
-
-.bento-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.cert-badge {
-    font-size: 0.65rem;
-    padding: 4px 8px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    text-transform: uppercase;
-}
-
-.bento-info h3 {
-    font-family: var(--tech-font);
-    font-size: 1rem;
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-.bento-info h4 {
-    font-family: var(--body-font);
-    font-size: 0.85rem;
-    color: #888;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.bento-info .code {
-    font-family: monospace;
-    font-size: 0.7rem;
-    color: #555;
-    background: #000;
-    padding: 2px 5px;
-    border-radius: 3px;
-    display: inline-block;
-}
-
-.bento-card.large p {
-    color: #aaa;
-    font-size: 0.9rem;
-    margin-top: 5px;
-}
-
-/* Cores Específicas */
-.google-card:hover {
-    border-color: #4285F4;
-    box-shadow: 0 5px 20px rgba(66, 133, 244, 0.2);
-}
-
-.security-card:hover {
-    border-color: #00d26a;
-    box-shadow: 0 5px 20px rgba(0, 210, 106, 0.2);
-}
-
-
-/* Animação do Pulso */
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
-    }
-
-    70% {
-        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
-    }
-
-    100% {
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-/* Responsividade */
-@media (max-width: 900px) {
-
-    /* Timeline vira coluna única */
-    .central-line {
-        left: 20px;
-    }
-
-    .journey-item {
-        width: 100%;
-        margin-left: 0;
-        padding: 0 0 40px 50px;
-        text-align: left;
-    }
-
-    .journey-item.left,
-    .journey-item.right {
-        text-align: left;
-        margin-left: 0;
-    }
-
-    .journey-item.left .journey-marker,
-    .journey-item.right .journey-marker {
-        left: 14px;
-        right: auto;
-    }
-
-    .journey-item.left .journey-content::before,
-    .journey-item.right .journey-content::before {
-        left: -30px;
-        width: 30px;
-        right: auto;
-    }
-
-    /* Grid vira coluna única */
-    .bento-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .bento-card.large,
-    .bento-card.medium,
-    .bento-card.small {
-        grid-column: span 1;
-    }
-
-    .bento-card.small {
-        text-align: left;
-        align-items: flex-start;
+    .fake-browser {
+        width: 90%;
     }
 }
