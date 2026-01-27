@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Pedro | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="intro-container" id="welcome-screen">
+        <h1 class="glitch" data-text="João Pedro">João Pedro</h1>
+        <p class="subtitle">Engenharia de Software | Front-End & Segurança</p>
+
+        <div class="tech-stack-bar">
+            <span>React</span> • <span>Next.js</span> • <span>TypeScript</span> • <span>Python</span> • <span>GCP</span>
+        </div>
+
+        <div class="menu-grid">
+            <div class="menu-card" data-target="sobre">
+                <div class="card-content">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <h3>Perfil & Bio</h3>
+                    <p>Minha formação, voluntariado e objetivos.</p>
+                </div>
+                <div class="card-glow"></div>
+            </div>
+
+            <div class="menu-card" data-target="carreira">
+                <div class="card-content">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <h3>Experiência</h3>
+                    <p>HT Cabos, Inatel e Segurança da Informação.</p>
+                </div>
+                <div class="card-glow"></div>
+            </div>
+
+            <div class="menu-card projects-card" data-target="projetos">
+                <div class="card-content">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z">
+                        </path>
+                        <path
+                            d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z">
+                        </path>
+                        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                    </svg>
+                    <h3>Projetos</h3>
+                    <p>Desenvolvimento Fullstack e Soluções.</p>
+                </div>
+                <div class="card-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <main id="content-layer" class="hidden">
+        <button id="back-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            Voltar ao Menu
+        </button>
+
+        <article id="sobre" class="content-section">
+            <div class="section-header">
+                <h2 class="glitch-title">Perfil <span class="highlight">&</span> Bio</h2>
+                <p class="section-desc">A fusão entre Lógica, Física e Engenharia de Software.</p>
+            </div>
+
+            <div class="bio-container">
+                <div class="bio-card highlight-card">
+                    <h3>João Pedro Chiachio</h3>
+                    <p class="role">Front-end Developer & Security Enthusiast</p>
+                    <p class="bio-text">
+                        Graduando em Engenharia de Software pelo Inatel. Meu foco não é apenas escrever código, mas
+                        criar <strong>experiências digitais</strong> que sejam performáticas e seguras.
+                        Transito com facilidade entre a construção de interfaces complexas (React/Next.js) e a lógica de
+                        proteção de dados.
+                    </p>
+                </div>
+
+                <div class="bio-grid">
+                    <div class="info-card">
+                        <div class="icon-box">💡</div>
+                        <h4>Resolução de Problemas</h4>
+                        <p>Abordagem analítica herdada da física para debugar e otimizar sistemas complexos.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon-box">🤝</div>
+                        <h4>Voluntariado</h4>
+                        <p>Atuação social na Primeira Igreja Batista, liderando eventos e ensinando música.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="icon-box">🚀</div>
+                        <h4>Objetivo</h4>
+                        <p>Especializar-me em Arquitetura de Software e Cibersegurança aplicada ao Front-end.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+
+        <article id="carreira" class="content-section">
+            <div class="section-header">
+                <h2 class="glitch-title">Minha <span class="highlight">Jornada</span></h2>
+                <p class="section-desc">Experiência Profissional, Formação e Certificações.</p>
+            </div>
+
+            <div class="timeline-container">
+
+                <h3 class="timeline-group-title">Experiência Profissional</h3>
+
+                <div class="timeline-card current">
+                    <div class="time-marker">Nov 2025 - Atual</div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div>
+                                <h3>Estagiário em Desenvolvimento</h3>
+                                <h4>HT Cabos e Tecnologia</h4>
+                            </div>
+                            <img src="https://media.licdn.com/dms/image/v2/C4D0BAQF_L1q_8yZq_Q/company-logo_100_100/company-logo_100_100/0/1630578663870?e=1746057600&v=beta&t=example"
+                                alt="HT" class="company-logo" onerror="this.style.display='none'">
+                        </div>
+                        <p>Desenvolvimento Fullstack. Criação de interfaces com <strong>React/Next.js</strong> e
+                            manipulação de dados com <strong>Python/SQL</strong>.</p>
+                        <div class="tech-tags">
+                            <span>Next.js</span><span>TypeScript</span><span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-card">
+                    <div class="time-marker">Fev 2025 - Ago 2025</div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <div>
+                                <h3>Estagiário em Segurança da Informação</h3>
+                                <h4>Inatel</h4>
+                            </div>
+                        </div>
+                        <p>Análise de vulnerabilidades, resposta a incidentes e gestão da plataforma <em>Hacker
+                                Rangers</em>.</p>
+                        <div class="tech-tags">
+                            <span>InfoSec</span><span>Power Automate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="timeline-group-title" style="margin-top: 50px;">Formação & Certificados</h3>
+
+                <div class="education-grid">
+                    <div class="edu-card">
+                        <span class="year">2024 - 2029</span>
+                        <h3>Engenharia de Software</h3>
+                        <h4>Inatel</h4>
+                        <p>Bacharelado focado em arquitetura, desenvolvimento e gestão de projetos.</p>
+                    </div>
+
+                    <div class="edu-card">
+                        <span class="year">2021 - 2022</span>
+                        <h3>Técnico em Telecomunicações</h3>
+                        <h4>Etec Getúlio Vargas</h4>
+                        <p>Base sólida em eletrônica e redes.</p>
+                    </div>
+
+                    <div class="edu-card cert">
+                        <span class="year">2025</span>
+                        <h3>Associate Cloud Engineer</h3>
+                        <h4>Google Cloud (Udemy)</h4>
+                        <p>Certificação em infraestrutura e serviços na nuvem GCP.</p>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+
+        <article id="projetos" class="content-section">
+            <div class="section-header">
+                <h2 class="glitch-title">Projetos <span class="highlight">&</span> Cases</h2>
+                <p class="section-desc">De soluções corporativas a projetos pessoais.</p>
+            </div>
+
+            <div class="projects-wrapper">
+
+                <div class="project-showcase">
+                    <div class="project-preview" style="background: linear-gradient(135deg, #003366, #001a33);">
+                        <div class="fake-browser">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <div class="url">refrinova.ind.br</div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3>Refrinova Website</h3>
+                        <p class="desc">Plataforma institucional desenvolvida para a indústria de refrigeração. Foco
+                            total em SEO, performance de carregamento e design responsivo para atrair novos clientes.
+                        </p>
+                        <div class="tech-stack">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                        </div>
+                        <a href="https://refrinova.ind.br" target="_blank" class="btn-project">Visitar Site ↗</a>
+                    </div>
+                </div>
+
+                <div class="project-showcase">
+                    <div class="project-preview" style="background: linear-gradient(135deg, #1a4d2e, #0f2e1b);">
+                        <div class="fake-browser">
+                            <div class="dots"><span></span><span></span><span></span></div>
+                            <div class="url">github.io/futebol-dos-amigos</div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <h3>Futebol dos Amigos</h3>
+                            <span
+                                style="font-size: 0.7rem; background: #333; padding: 4px 8px; border-radius: 4px; color: #aaa; border: 1px solid #444;">HOBBY</span>
+                        </div>
+                        <p class="desc">Dashboard interativo criado para gerenciar as estatísticas do futebol de sábado.
+                            Inclui artilharia, dados dos jogadores e histórico de partidas.</p>
+                        <div class="tech-stack">
+                            <span>GitHub Pages</span><span>JS Vanilla</span><span>CSS</span>
+                        </div>
+                        <a href="https://joaopedrochiachio.github.io/futebol-dos-amigos/" target="_blank"
+                            class="btn-project">Ver Estatísticas ⚽</a>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+    </main>
+
+    <div id="lightning-flash"></div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
