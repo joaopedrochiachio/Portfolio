@@ -1557,3 +1557,346 @@ h1.glitch {
         width: 90%;
     }
 }
+
+/* --- ADIÇÕES PARA O CONTEÚDO NOVO DO SOBRE --- */
+
+/* Badge de Nível (Idade) */
+.level-badge {
+    background: var(--iron-gold);
+    color: #000;
+    font-family: var(--tech-font);
+    font-weight: 800;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+/* Módulo Namorada (Barra de Energia) */
+.life-module {
+    margin-bottom: 20px;
+    background: rgba(255, 51, 102, 0.05);
+    /* Um fundo leve avermelhado */
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 51, 102, 0.2);
+}
+
+.module-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.mod-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.mod-desc {
+    font-size: 0.75rem;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.energy-bar {
+    width: 100%;
+    height: 12px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.energy-bar .fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff3366, #ff99cc);
+    /* Gradiente Rosa/Amor Tech */
+    font-family: var(--tech-font);
+    font-size: 0.6rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Grid de Hobbies */
+.hobbies-grid {
+    display: flex;
+    gap: 10px;
+}
+
+.hobby-chip {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #111;
+    border: 1px solid #333;
+    padding: 8px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.hobby-chip:hover {
+    border-color: var(--iron-gold);
+    background: #1a1a1a;
+}
+
+.hobby-icon {
+    font-size: 1.2rem;
+}
+
+.hobby-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.hobby-info strong {
+    color: #ddd;
+    font-size: 0.8rem;
+}
+
+.hobby-info span {
+    font-size: 0.65rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* --- ESTILOS DO NOVO PERFIL (SOBRE) --- */
+
+/* Ajustes da Identidade */
+.tech-tag {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--iron-gold);
+    font-family: var(--tech-font);
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.specs-list {
+    margin-top: 25px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding-bottom: 5px;
+}
+
+.spec-label {
+    color: #666;
+    font-family: var(--tech-font);
+}
+
+.spec-value {
+    color: #ccc;
+    text-align: right;
+}
+
+/* Estilos do Card Bio (Direita) */
+.bio-block {
+    padding: 10px 5px;
+}
+
+.bio-title {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bio-title .icon {
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.05);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.bio-text {
+    color: #999;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.bio-text strong {
+    color: var(--iron-gold);
+}
+
+.divider-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    margin: 20px 0;
+}
+
+/* Container de Hobbies */
+.hobbies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.hobby-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
+}
+
+.hobby-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--iron-orange);
+    transform: translateX(5px);
+}
+
+.h-icon {
+    font-size: 1.5rem;
+}
+
+.h-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.h-desc strong {
+    color: #eee;
+    font-size: 0.9rem;
+}
+
+.h-desc span {
+    color: #666;
+    font-size: 0.75rem;
+}
+
+/* Mobile Ajuste */
+@media (max-width: 900px) {
+    .dash-card.bio-card {
+        grid-column: span 1 !important;
+        /* Força ficar em 1 coluna no celular */
+    }
+
+    .hobbies-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- ESTILOS DO MINDSET TÉCNICO --- */
+
+.tech-mindset {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background: linear-gradient(160deg, rgba(15, 15, 20, 0.95), rgba(5, 5, 5, 0.98));
+}
+
+.mindset-header h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mindset-desc {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* Grid dos Protocolos */
+.protocols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.protocol-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.protocol-item:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--royal-gold);
+    transform: translateY(-5px);
+}
+
+/* Badge do Protocolo (Core, Logic, Arch) */
+.p-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.p-badge {
+    font-family: var(--tech-font);
+    font-size: 0.65rem;
+    background: rgba(212, 175, 55, 0.15);
+    /* Royal Gold escuro */
+    color: var(--royal-gold);
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.protocol-item h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.protocol-item p {
+    color: #888;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.protocol-item p strong {
+    color: #ddd;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 900px) {
+    .protocols-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-mindset {
+        padding: 20px;
+    }
+}
