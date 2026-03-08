@@ -89,6 +89,13 @@ let mcqueenModel = null;
 const loader = new GLTFLoader();
 const CAR_SCALE = 2.2;
 
+// FIX: Bloqueia a grade do menu antes do carregamento
+const menuGrid = document.querySelector('.menu-grid');
+if (menuGrid) {
+    menuGrid.style.pointerEvents = 'none';
+    menuGrid.style.opacity = '0.5';
+}
+
 loader.load('assets/models/mcqueen.glb', (gltf) => {
     mcqueenModel = gltf.scene;
     mcqueenModel.scale.set(CAR_SCALE, CAR_SCALE, CAR_SCALE);
@@ -101,6 +108,16 @@ loader.load('assets/models/mcqueen.glb', (gltf) => {
         }
     });
     scene.add(mcqueenModel);
+
+    // FIX 1: Força a compilação dos shaders na GPU antes do usuário clicar
+    renderer.compile(scene, camera);
+
+    // FIX 2: Libera o menu para clique e restaura a opacidade suavemente
+    if (menuGrid) {
+        menuGrid.style.pointerEvents = 'auto';
+        menuGrid.style.opacity = '1';
+        menuGrid.style.transition = 'opacity 0.5s ease';
+    }
 });
 
 // --- INTERAÇÃO DOS MENUS ---
@@ -233,12 +250,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Aplica animação aos novos cards também
-
-
 const animatedElements = document.querySelectorAll('.mission-entry, .dash-card, .project-showcase, .lab-card, .academic-card, .cert-badge-card');
 
-// O resto continua igual:
 animatedElements.forEach((item) => {
     item.style.opacity = "0";
     item.style.transform = "translateY(30px)";
@@ -257,14 +270,11 @@ tiltCards.forEach(card => {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        // Tilt suave
         const rotateX = ((y - centerY) / 20) * -1;
         const rotateY = (x - centerX) / 20;
 
         card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
 
-        // Efeito "Glare" se o card tiver conteúdo interno
-        // (Isso impede de quebrar layout se o card for complexo)
         if (card.classList.contains('dash-card') || card.classList.contains('mission-card')) {
             card.style.borderColor = 'var(--iron-red-bright)';
         }
