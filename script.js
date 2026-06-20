@@ -1,6 +1,31 @@
 import * as THREE from 'https://esm.sh/three';
 import { GLTFLoader } from 'https://esm.sh/three/examples/jsm/loaders/GLTFLoader.js';
 
+// --- CARREGADOR DE COMPONENTES ---
+async function loadComponents() {
+    const fetchHTML = async (url, targetId) => {
+        try {
+            const response = await fetch(url);
+            const html = await response.text();
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.outerHTML = html;
+            }
+        } catch (error) {
+            console.error(`Erro ao carregar ${url}:`, error);
+        }
+    };
+
+    await Promise.all([
+        fetchHTML('components/menu.html', 'menu-container'),
+        fetchHTML('pages/sobre.html', 'page-sobre'),
+        fetchHTML('pages/carreira.html', 'page-carreira'),
+        fetchHTML('pages/projetos.html', 'page-projetos')
+    ]);
+}
+
+await loadComponents();
+
 // --- CONFIGURAÇÕES GERAIS ---
 const START_POS_X = -40;
 const END_POS_X = 40;
