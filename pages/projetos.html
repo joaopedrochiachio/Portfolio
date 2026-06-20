@@ -4,8 +4,10 @@
         <p class="section-desc">Development Log: Produção vs. Conceito.</p>
     </div>
 
+    <!-- MAIN PROJECTS GRID -->
     <div class="projects-wrapper">
 
+        <!-- PROJETO 1: Refrinova -->
         <div class="project-showcase" data-tilt>
             <div class="project-preview refrinova-bg">
                 <div class="status-badge production">EM PRODUÇÃO</div>
@@ -19,16 +21,16 @@
                     <h3>Refrinova Institucional</h3>
                     <span class="type-tag">Corporate</span>
                 </div>
-                <p class="desc">Plataforma institucional desenvolvida para a indústria de refrigeração.</p>
+                <p class="desc">Plataforma corporativa oficial desenvolvida para a indústria Refrinova.</p>
 
                 <div class="proj-grid">
                     <div>
-                        <h4>🧠 O Problema</h4>
-                        <p class="small">Cliente precisava de presença digital e SEO posicionado.</p>
+                        <h4>🧠 Arquitetura</h4>
+                        <p class="small">Foco em SEO, conversão de leads e acessibilidade rápida de serviços.</p>
                     </div>
                     <div>
-                        <h4>🛠 Solução</h4>
-                        <p class="small">Site otimizado focado em performance e conversão.</p>
+                        <h4>🛠 Implementação</h4>
+                        <p class="small">Frontend de alta performance rodando em produção de forma estável.</p>
                     </div>
                 </div>
 
@@ -37,9 +39,11 @@
             </div>
         </div>
 
+
+        <!-- PROJETO 3: Futebol dos Amigos -->
         <div class="project-showcase" data-tilt>
             <div class="project-preview futebol-bg">
-                <div class="status-badge hobby">HOBBY / FUN</div>
+                <div class="status-badge hobby">HOBBY / LAB</div>
                 <div class="fake-browser">
                     <div class="dots"><span></span><span></span><span></span></div>
                     <div class="url">futebol-stats.app</div>
@@ -50,24 +54,67 @@
                     <h3>Futebol dos Amigos</h3>
                     <span class="type-tag">Data Viz</span>
                 </div>
-                <p class="desc">Dashboard interativo para gerenciar estatísticas de futebol amador.</p>
+                <p class="desc">Dashboard interativo para rastreamento de estatísticas e placares em partidas amadoras.</p>
 
                 <div class="proj-grid">
                     <div>
-                        <h4>🧠 A Ideia</h4>
-                        <p class="small">Acabar com as discussões sobre quem é o artilheiro.</p>
+                        <h4>🧠 O Desafio</h4>
+                        <p class="small">Manipulação de dados, ordenação e exibição de leaderboards dinâmicos.</p>
                     </div>
                     <div>
-                        <h4>🛠 Tech</h4>
-                        <p class="small">Lógica JS pura para manipulação de arrays e DOM.</p>
+                        <h4>🛠 DOM Puro</h4>
+                        <p class="small">Implementação purista com JS Vanilla, sem frameworks para dominar a base.</p>
                     </div>
                 </div>
 
-                <div class="tech-stack"><span>JS Vanilla</span><span>GitHub Pages</span></div>
-                <a href="https://joaopedrochiachio.github.io/futebol-dos-amigos/" target="_blank"
-                    class="btn-project">Ver Dashboard ⚽</a>
+                <div class="tech-stack"><span>JS Vanilla</span><span>DOM Manipulation</span><span>GitHub Pages</span></div>
+                <a href="https://joaopedrochiachio.github.io/futebol-dos-amigos/" target="_blank" class="btn-project">Ver Dashboard ⚽</a>
             </div>
         </div>
 
     </div>
+
+    <!-- SUBSECTION: GUIDES & OPEN SOURCE -->
+    <div class="archive-section" style="margin-top: 80px;">
+        <h3 class="block-title">Protocolos <span class="highlight">&</span> Open Source</h3>
+        <p class="section-desc" style="margin-bottom: 30px; font-size: 0.95rem;">Manutenção de guias técnicos e arquitetura baseada no GitHub.</p>
+
+        <div class="guides-grid">
+            
+            <a href="https://github.com/joaopedrochiachio/Clean-Code" target="_blank" class="guide-card" data-tilt>
+                <div class="guide-icon">🧼</div>
+                <div class="guide-content">
+                    <h4>Clean Code & SOLID</h4>
+                    <p>Meu guia pessoal e referência rápida para código limpo, boas práticas, princípios SOLID e Pragmatic Programmer.</p>
+                </div>
+                <div class="guide-arrow">➔</div>
+            </a>
+
+            <a href="https://github.com/joaopedrochiachio/Padroes-de-commits" target="_blank" class="guide-card" data-tilt>
+                <div class="guide-icon">📝</div>
+                <div class="guide-content">
+                    <h4>Padrões de Commits</h4>
+                    <p>Guia de padronização de commits, versionamento semântico e boas práticas para manter o histórico do Git impecável.</p>
+                </div>
+                <div class="guide-arrow">➔</div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- GITHUB BUTTON -->
+    <div class="github-action-wrapper">
+        <a href="https://github.com/joaopedrochiachio" target="_blank" class="github-main-btn">
+            <svg class="gh-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.164 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path>
+            </svg>
+            <div class="gh-text">
+                <span class="gh-title">Acessar GitHub</span>
+                <span class="gh-user">github.com/joaopedrochiachio</span>
+            </div>
+            <div class="gh-glow"></div>
+        </a>
+    </div>
+
 </article>
+<!-- </body> -->
